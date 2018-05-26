@@ -2,7 +2,8 @@ package edu.usal.negocio.dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Vuelo implements Serializable{
@@ -15,16 +16,16 @@ public class Vuelo implements Serializable{
 	private Integer cantAsientos;
 	private Aeropuerto aeropuertoSalida;
 	private Aeropuerto aeropuertoLlegada;
-	private Date fechaHoraSalida;
-	private Date fechaHoraLlegada;
+	private Calendar fechaHoraSalida;
+	private Calendar fechaHoraLlegada;
 	private String tiempoVuelo;
 	private List<Cliente> clientes;
 	
 	Vuelo(){
 		Aeropuerto aeropuertoSalida = new Aeropuerto();
 		Aeropuerto aeropuertoLlegada= new Aeropuerto();
-		Date fechaHoraSalida = new Date();
-		Date fechaHoraLlegada= new Date();
+		Calendar fechaHoraSalida = new GregorianCalendar();
+		Calendar fechaHoraLlegada= new GregorianCalendar();
 		List<Cliente> clientes = new ArrayList<Cliente>();
 	}
 	
@@ -58,16 +59,16 @@ public class Vuelo implements Serializable{
 	public void setAeropuertoLlegada(Aeropuerto aeropuertoLlegada) {
 		this.aeropuertoLlegada = aeropuertoLlegada;
 	}
-	public Date getFechaHoraSalida() {
+	public Calendar getFechaHoraSalida() {
 		return fechaHoraSalida;
 	}
-	public void setFechaHoraSalida(Date fechaHoraSalida) {
+	public void setFechaHoraSalida(Calendar fechaHoraSalida) {
 		this.fechaHoraSalida = fechaHoraSalida;
 	}
-	public Date getFechaHoraLlegada() {
+	public Calendar getFechaHoraLlegada() {
 		return fechaHoraLlegada;
 	}
-	public void setFechaHoraLlegada(Date fechaHoraLlegada) {
+	public void setFechaHoraLlegada(Calendar fechaHoraLlegada) {
 		this.fechaHoraLlegada = fechaHoraLlegada;
 	}
 	public String getTiempoVuelo() {

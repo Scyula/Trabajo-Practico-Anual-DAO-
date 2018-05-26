@@ -1,7 +1,8 @@
 package edu.usal.negocio.dominio;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Pasaporte implements Serializable{
 	/**
@@ -11,12 +12,12 @@ public class Pasaporte implements Serializable{
 	private String nroPasaporte;
 	private int pais;
 	private String autoridademision;
-	private Date emision;
-	private Date vencimiento;
+	private Calendar emision;
+	private Calendar vencimiento;
 	
 	Pasaporte(){
-		Date emision= new Date();
-		Date vencimiento= new Date();
+		Calendar emision= new GregorianCalendar();
+		Calendar vencimiento= new GregorianCalendar();
 	}
 	
 	public String getNroPasaporte() {
@@ -37,16 +38,16 @@ public class Pasaporte implements Serializable{
 	public void setAutoridademision(String autoridademision) {
 		this.autoridademision = autoridademision;
 	}
-	public Date getEmision() {
+	public Calendar getEmision() {
 		return emision;
 	}
-	public void setEmision(Date emision) {
+	public void setEmision(Calendar emision) {
 		this.emision = emision;
 	}
-	public Date getVencimiento() {
+	public Calendar getVencimiento() {
 		return vencimiento;
 	}
-	public void setVencimiento(Date vencimiento) {
+	public void setVencimiento(Calendar vencimiento) {
 		this.vencimiento = vencimiento;
 	}
 	

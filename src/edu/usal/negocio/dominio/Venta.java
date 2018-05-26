@@ -1,7 +1,8 @@
 package edu.usal.negocio.dominio;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Venta implements Serializable{
 	/**
@@ -12,14 +13,14 @@ public class Venta implements Serializable{
 	private Cliente cliente;
 	private Vuelo vuelo;
 	private String lineaAerea;
-	private Date fechaHoraVenta;
+	private Calendar fechaHoraVenta;
 	private String formaPago;
 	private String totalPagar;
 	
 	Venta(){
 		Cliente cliente = new Cliente();
 		Vuelo vuelo = new Vuelo();
-		Date fechaHoraVenta = new Date();
+		Calendar fechaHoraVenta = new GregorianCalendar();
 	}
 	
 	public int getId_venta() {
@@ -46,10 +47,10 @@ public class Venta implements Serializable{
 	public void setLineaAerea(String lineaAerea) {
 		this.lineaAerea = lineaAerea;
 	}
-	public Date getFechaHoraVenta() {
+	public Calendar getFechaHoraVenta() {
 		return fechaHoraVenta;
 	}
-	public void setFechaHoraVenta(Date fechaHoraVenta) {
+	public void setFechaHoraVenta(Calendar fechaHoraVenta) {
 		this.fechaHoraVenta = fechaHoraVenta;
 	}
 	public String getFormaPago() {

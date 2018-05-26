@@ -2,7 +2,8 @@ package edu.usal.negocio.dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Cliente implements Serializable{
@@ -15,7 +16,7 @@ public class Cliente implements Serializable{
 	private String apellido;
 	private Pasaporte pasaporte;
 	private String cuitcuil;
-	private Date fechaNac;
+	private Calendar fechaNac;
 	private String email;
 	private Telefono telefono;
 	private PasajeroFrecuente pasajeroFrecuente;
@@ -23,9 +24,9 @@ public class Cliente implements Serializable{
 	private List<Vuelo> vuelos;
 	
 	@SuppressWarnings("unused")
-	Cliente(){
+	public Cliente(){
 		Pasaporte pasaporte= new Pasaporte();
-		Date fechaNac = new Date();
+		Calendar fechaNac = new GregorianCalendar();
 		Telefono telefono = new Telefono();
 		PasajeroFrecuente pasajeroFrecuente = new PasajeroFrecuente();
 		Direccion direccion = new Direccion();
@@ -55,10 +56,10 @@ public class Cliente implements Serializable{
 	public void setCuitcuil(String cuitcuil) {
 		this.cuitcuil = cuitcuil;
 	}
-	public Date getFechaNac() {
+	public Calendar getFechaNac() {
 		return fechaNac;
 	}
-	public void setFechaNac(Date fechaNac) {
+	public void setFechaNac(Calendar fechaNac) {
 		this.fechaNac = fechaNac;
 	}
 	public String getEmail() {
