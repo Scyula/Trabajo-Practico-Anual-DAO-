@@ -1,6 +1,12 @@
 package edu.usal.negocio.dominio;
 
-public class Telefono {
+import java.io.Serializable;
+
+public class Telefono implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 640L;
 	private String nroPersonal;
 	private String nroCelular;
 	private String nroLaboral;

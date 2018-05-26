@@ -1,11 +1,16 @@
 package edu.usal.negocio.dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Cliente {
+public class Cliente implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 516L;
 	private String nombre;
 	private String apellido;
 	private Pasaporte pasaporte;
@@ -17,6 +22,7 @@ public class Cliente {
 	private Direccion direccion;
 	private List<Vuelo> vuelos;
 	
+	@SuppressWarnings("unused")
 	Cliente(){
 		Pasaporte pasaporte= new Pasaporte();
 		Date fechaNac = new Date();

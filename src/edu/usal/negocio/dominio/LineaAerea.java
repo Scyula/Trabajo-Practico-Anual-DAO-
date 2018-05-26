@@ -1,6 +1,12 @@
 package edu.usal.negocio.dominio;
 
-public class LineaAerea {
+import java.io.Serializable;
+
+public class LineaAerea implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 664L;
 	private String nombre;
 	private int alianza;
 	private Vuelo vuelos;

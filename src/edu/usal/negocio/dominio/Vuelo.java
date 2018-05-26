@@ -1,10 +1,15 @@
 package edu.usal.negocio.dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Vuelo {
+public class Vuelo implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 196L;
 	private int id_vuelo;
 	private String nombreAerolinea;
 	private Integer cantAsientos;

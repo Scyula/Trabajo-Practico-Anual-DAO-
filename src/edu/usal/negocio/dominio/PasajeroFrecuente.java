@@ -1,6 +1,12 @@
 package edu.usal.negocio.dominio;
 
-public class PasajeroFrecuente {
+import java.io.Serializable;
+
+public class PasajeroFrecuente implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 233L;
 	private int alianza;
 	private String aerolinea;
 	private String numero;

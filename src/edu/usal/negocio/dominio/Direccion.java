@@ -1,6 +1,12 @@
 package edu.usal.negocio.dominio;
 
-public class Direccion {
+import java.io.Serializable;
+
+public class Direccion implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 959L;
 	private String calle;
 	private String altura;
 	private String ciudad;

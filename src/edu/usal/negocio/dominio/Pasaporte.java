@@ -1,8 +1,13 @@
 package edu.usal.negocio.dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Pasaporte {
+public class Pasaporte implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 754L;
 	private String nroPasaporte;
 	private int pais;
 	private String autoridademision;

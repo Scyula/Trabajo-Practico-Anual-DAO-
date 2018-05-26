@@ -1,8 +1,13 @@
 package edu.usal.negocio.dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Venta {
+public class Venta implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 837L;
 	private int id_venta;
 	private Cliente cliente;
 	private Vuelo vuelo;

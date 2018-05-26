@@ -1,6 +1,12 @@
 package edu.usal.negocio.dominio;
 
-public class Aeropuerto {
+import java.io.Serializable;
+
+public class Aeropuerto implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 333L;
 	private String idAeropuerto;
 	private String ciudad;
 	private String provincia;
