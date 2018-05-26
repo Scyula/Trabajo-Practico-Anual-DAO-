@@ -1,5 +1,6 @@
 package edu.usal.negocio.dominio;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +17,14 @@ public class Cliente {
 	private Direccion direccion;
 	private List<Vuelo> vuelos;
 	
+	Cliente(){
+		Pasaporte pasaporte= new Pasaporte();
+		Date fechaNac = new Date();
+		Telefono telefono = new Telefono();
+		PasajeroFrecuente pasajeroFrecuente = new PasajeroFrecuente();
+		Direccion direccion = new Direccion();
+		List<Vuelo> vuelos = new ArrayList<Vuelo>();
+	}
 	public String getNombre() {
 		return nombre;
 	}

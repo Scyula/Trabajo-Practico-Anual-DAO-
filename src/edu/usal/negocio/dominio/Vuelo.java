@@ -1,5 +1,6 @@
 package edu.usal.negocio.dominio;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,14 @@ public class Vuelo {
 	private Date fechaHoraLlegada;
 	private String tiempoVuelo;
 	private List<Cliente> clientes;
+	
+	Vuelo(){
+		Aeropuerto aeropuertoSalida = new Aeropuerto();
+		Aeropuerto aeropuertoLlegada= new Aeropuerto();
+		Date fechaHoraSalida = new Date();
+		Date fechaHoraLlegada= new Date();
+		List<Cliente> clientes = new ArrayList<Cliente>();
+	}
 	
 	public int getId_vuelo() {
 		return id_vuelo;

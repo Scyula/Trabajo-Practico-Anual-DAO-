@@ -11,6 +11,12 @@ public class Venta {
 	private String formaPago;
 	private String totalPagar;
 	
+	Venta(){
+		Cliente cliente = new Cliente();
+		Vuelo vuelo = new Vuelo();
+		Date fechaHoraVenta = new Date();
+	}
+	
 	public int getId_venta() {
 		return id_venta;
 	}

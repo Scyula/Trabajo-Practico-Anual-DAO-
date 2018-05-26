@@ -5,6 +5,9 @@ public class LineaAerea {
 	private int alianza;
 	private Vuelo vuelos;
 	
+	LineaAerea(){
+		Vuelo vuelos = new Vuelo();
+	}
 	
 	public String getNombre() {
 		return nombre;

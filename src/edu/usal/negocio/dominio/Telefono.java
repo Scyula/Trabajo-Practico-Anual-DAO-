@@ -4,6 +4,7 @@ public class Telefono {
 	private String nroPersonal;
 	private String nroCelular;
 	private String nroLaboral;
+	
 	public String getNroPersonal() {
 		return nroPersonal;
 	}

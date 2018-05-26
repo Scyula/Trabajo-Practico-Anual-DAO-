@@ -9,6 +9,10 @@ public class Pasaporte {
 	private Date emision;
 	private Date vencimiento;
 	
+	Pasaporte(){
+		Date emision= new Date();
+		Date vencimiento= new Date();
+	}
 	
 	public String getNroPasaporte() {
 		return nroPasaporte;
