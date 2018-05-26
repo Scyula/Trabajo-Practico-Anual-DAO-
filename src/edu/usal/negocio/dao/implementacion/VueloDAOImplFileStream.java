@@ -1,4 +1,4 @@
-package usal.edu.negocio.dao.implementacion;
+package edu.usal.negocio.dao.implementacion;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import edu.usal.negocio.dao.interfaces.VueloDAO;
 import edu.usal.negocio.dominio.Vuelo;
 import edu.usal.util.PropertiesUtil;
 
-public class VueloDAOImplDileStream implements VueloDAO {
+public class VueloDAOImplFileStream implements VueloDAO {
 	private File file;
 	private ObjectInputStream objInput;
 	private ObjectOutputStream objOutput;

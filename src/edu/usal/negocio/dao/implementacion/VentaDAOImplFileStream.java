@@ -1,4 +1,4 @@
-package usal.edu.negocio.dao.implementacion;
+package edu.usal.negocio.dao.implementacion;
 
 import java.io.File;
 import java.io.FileInputStream;

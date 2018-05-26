@@ -9,7 +9,7 @@ public class PropertiesUtil {
 	public static String getPathCliente()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("pathCliente");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -20,7 +20,7 @@ public class PropertiesUtil {
 	public static String getNameClienteStream()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFileCliente");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -30,7 +30,7 @@ public class PropertiesUtil {
 	public static String getPathAlianzas()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("pathAlianzas");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -41,7 +41,7 @@ public class PropertiesUtil {
 	public static String getNameAlianzas()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFileAlianzas");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -51,7 +51,7 @@ public class PropertiesUtil {
 	public static String getPathPaises()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("pathPaises");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -62,7 +62,7 @@ public class PropertiesUtil {
 	public static String getNamePaises()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFilePaises");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -72,7 +72,7 @@ public class PropertiesUtil {
 	public static String getPathProvincias()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("pathProvincias");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -83,7 +83,7 @@ public class PropertiesUtil {
 	public static String getNameProvincias()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFileProvincias");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -93,7 +93,7 @@ public class PropertiesUtil {
 	public static String getPathVenta()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("pathVenta");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -104,7 +104,7 @@ public class PropertiesUtil {
 	public static String getNameVenta()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFileVenta");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -114,7 +114,7 @@ public class PropertiesUtil {
 	public static String getPathVuelo()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("pathVuelo");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -135,7 +135,7 @@ public class PropertiesUtil {
 	public static String getPathLineaAerea()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("pathLineaAerea");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -146,7 +146,7 @@ public class PropertiesUtil {
 	public static String getNameLineaAerea()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFileLineaAerea");
 		}catch(IOException e){
 			e.printStackTrace();

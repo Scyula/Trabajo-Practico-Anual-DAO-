@@ -1,4 +1,4 @@
-package usal.edu.negocio.dao.implementacion;
+package edu.usal.negocio.dao.implementacion;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,16 +6,16 @@ import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Scanner;
 
-import edu.usal.negocio.dao.interfaces.PaisesDAO;
+import edu.usal.negocio.dao.interfaces.ProvinciasDAO;
 import edu.usal.util.PropertiesUtil;
 
-public class PaisesDAOImplFileString implements PaisesDAO {
+public class ProvinciasDAOImplFileString implements ProvinciasDAO {
 	private File file;
 	private Scanner scanner;
 	
 	@Override
-	public Hashtable<Integer, String> leerPaises() throws FileNotFoundException, IOException {
-		file = new File(PropertiesUtil.getPathPaises(), PropertiesUtil.getNamePaises());
+	public Hashtable<Integer, String> leerProvincias() throws FileNotFoundException, IOException {
+		file = new File(PropertiesUtil.getPathProvincias(), PropertiesUtil.getNameProvincias());
 		scanner= new Scanner(file);
 		Hashtable<Integer, String> list = new Hashtable<Integer, String>();
 		while (scanner.hasNextLine()){
