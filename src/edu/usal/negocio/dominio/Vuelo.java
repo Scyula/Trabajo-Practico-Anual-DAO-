@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Vuelo {
+	private int id_vuelo;
 	private String nombreAerolinea;
 	private Integer cantAsientos;
 	private Aeropuerto aeropuertoSalida;
@@ -13,6 +14,12 @@ public class Vuelo {
 	private String tiempoVuelo;
 	private List<Cliente> clientes;
 	
+	public int getId_vuelo() {
+		return id_vuelo;
+	}
+	public void setId_vuelo(int id_vuelo) {
+		this.id_vuelo = id_vuelo;
+	}
 	public String getNombreAerolinea() {
 		return nombreAerolinea;
 	}

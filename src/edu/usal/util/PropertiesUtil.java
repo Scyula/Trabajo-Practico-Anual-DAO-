@@ -27,27 +27,6 @@ public class PropertiesUtil {
 		}
 		return null;
 	}
-	public static String getPathLineaAerea()throws IOException, FileNotFoundException{
-		try{
-			config = new Properties();
-			config.load(new FileReader("config.properties"));
-			return config.getProperty("pathLineaAerea");
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	public static String getNameLineaAereaStream()throws IOException, FileNotFoundException{
-		try{
-			config = new Properties();
-			config.load(new FileReader("config.properties"));
-			return config.getProperty("nameFileLineaAerea");
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return null;
-	}
 	public static String getPathAlianzas()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
@@ -106,6 +85,69 @@ public class PropertiesUtil {
 			config = new Properties();
 			config.load(new FileReader("config.properties"));
 			return config.getProperty("nameFileProvincias");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathVenta()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("pathVenta");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static String getNameVenta()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("nameFileVenta");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathVuelo()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("pathVuelo");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static String getNameVuelo()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("nameFileVuelo");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathLineaAerea()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("pathLineaAerea");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static String getNameLineaAerea()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("nameFileLineaAerea");
 		}catch(IOException e){
 			e.printStackTrace();
 		}

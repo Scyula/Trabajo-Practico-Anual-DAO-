@@ -5,6 +5,6 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 public interface AlianzasDAO {
-	public Hashtable<Integer,String> leerAlianzas()throws FileNotFoundException, IOException;;
+	public Hashtable<Integer,String> leerAlianzas()throws FileNotFoundException, IOException;
 
 }

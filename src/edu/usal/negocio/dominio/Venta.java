@@ -3,6 +3,7 @@ package edu.usal.negocio.dominio;
 import java.util.Date;
 
 public class Venta {
+	private int id_venta;
 	private Cliente cliente;
 	private Vuelo vuelo;
 	private String lineaAerea;
@@ -10,7 +11,12 @@ public class Venta {
 	private String formaPago;
 	private String totalPagar;
 	
-	
+	public int getId_venta() {
+		return id_venta;
+	}
+	public void setId_venta(int id_venta) {
+		this.id_venta = id_venta;
+	}
 	public Cliente getCliente() {
 		return cliente;
 	}

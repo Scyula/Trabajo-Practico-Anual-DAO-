@@ -8,7 +8,7 @@ import edu.usal.negocio.dominio.Vuelo;
 
 public interface VueloDAO {
 
-	public void addVuelo(Vuelo vuelo) throws FileNotFoundException, IOException;
+	public boolean addVuelo(Vuelo vuelo) throws FileNotFoundException, IOException;
 	public boolean updateVuelo(Vuelo vuelo) throws FileNotFoundException, IOException;
 	public boolean deleteVuelo(Vuelo  vuelo) throws FileNotFoundException, IOException;
 	public List<Vuelo > getAllVuelo() throws FileNotFoundException, IOException;

@@ -51,11 +51,11 @@ public class LineaAereaDAOImplFileStream implements LineaAereaDAO {
 
 	@Override
 	public List<LineaAerea> getAllLineaAerea() throws FileNotFoundException, IOException {
-		this.file= new File(PropertiesUtil.getPathCliente(),PropertiesUtil.getNameClienteStream());
+		this.file= new File(PropertiesUtil.getPathLineaAerea(),PropertiesUtil.getNameLineaAerea());
 		if(!file.exists()){
-			file = new File(PropertiesUtil.getPathCliente());
+			file = new File(PropertiesUtil.getPathLineaAerea());
 			file.mkdirs();
-			file= new File(PropertiesUtil.getPathCliente(), PropertiesUtil.getNameClienteStream());
+			file= new File(PropertiesUtil.getPathLineaAerea(), PropertiesUtil.getNameLineaAerea());
 			file.createNewFile();
 			this.saveAllLineaAerea(new ArrayList<LineaAerea>());
 			return new ArrayList<LineaAerea>();
@@ -75,7 +75,7 @@ public class LineaAereaDAOImplFileStream implements LineaAereaDAO {
 
 	@Override
 	public void saveAllLineaAerea(List<LineaAerea> lineaAerea) throws FileNotFoundException, IOException {
-		this.file= new File(PropertiesUtil.getPathCliente(),PropertiesUtil.getNameClienteStream());
+		this.file= new File(PropertiesUtil.getPathLineaAerea(),PropertiesUtil.getNameLineaAerea());
 		this.fileOut = new FileOutputStream(file);
 		this.objOutput = new ObjectOutputStream(fileOut);
 		this.objOutput.writeObject(lineaAerea);
