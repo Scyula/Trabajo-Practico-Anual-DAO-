@@ -1,14 +1,15 @@
 package edu.usal.negocio.dominio;
 
 public class PasajeroFrecuente {
-	private String alianza;
+	private int alianza;
 	private String aerolinea;
 	private String numero;
 	private String Catergoria;
-	public String getAlianza() {
+	
+	public int getAlianza() {
 		return alianza;
 	}
-	public void setAlianza(String alianza) {
+	public void setAlianza(int alianza) {
 		this.alianza = alianza;
 	}
 	public String getAerolinea() {

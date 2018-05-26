@@ -4,20 +4,22 @@ import java.util.Date;
 
 public class Pasaporte {
 	private String nroPasaporte;
-	private String pais;
+	private int pais;
 	private String autoridademision;
 	private Date emision;
 	private Date vencimiento;
+	
+	
 	public String getNroPasaporte() {
 		return nroPasaporte;
 	}
 	public void setNroPasaporte(String nroPasaporte) {
 		this.nroPasaporte = nroPasaporte;
 	}
-	public String getPais() {
+	public int getPais() {
 		return pais;
 	}
-	public void setPais(String pais) {
+	public void setPais(int pais) {
 		this.pais = pais;
 	}
 	public String getAutoridademision() {

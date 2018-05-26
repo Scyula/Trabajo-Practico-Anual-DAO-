@@ -8,7 +8,7 @@ import edu.usal.negocio.dominio.Venta;
 
 public interface VentaDAO {
 
-	public void addVenta(Venta venta) throws FileNotFoundException, IOException;
+	public boolean addVenta(Venta venta) throws FileNotFoundException, IOException;
 	public boolean updateVenta(Venta venta) throws FileNotFoundException, IOException;
 	public boolean deleteVentas(Venta  venta) throws FileNotFoundException, IOException;
 	public List<Venta> getAllVenta() throws FileNotFoundException, IOException;

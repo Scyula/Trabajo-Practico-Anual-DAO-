@@ -13,6 +13,4 @@ public interface VueloDAO {
 	public boolean deleteVuelo(Vuelo  vuelo) throws FileNotFoundException, IOException;
 	public List<Vuelo > getAllVuelo() throws FileNotFoundException, IOException;
 	public void saveAllVuelo(List<Vuelo > list) throws FileNotFoundException, IOException;
-	
-	
 }

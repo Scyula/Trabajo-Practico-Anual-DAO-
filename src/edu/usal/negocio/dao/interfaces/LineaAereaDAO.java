@@ -8,7 +8,7 @@ import edu.usal.negocio.dominio.LineaAerea ;
 
 public interface LineaAereaDAO {
 
-	public void addLineaAerea(LineaAerea lineaAerea) throws FileNotFoundException, IOException;
+	public boolean addLineaAerea(LineaAerea lineaAerea) throws FileNotFoundException, IOException;
 	public boolean updateLineaAerea(LineaAerea lineaAerea) throws FileNotFoundException, IOException;
 	public boolean deleteLineaAerea(LineaAerea  lineaAerea) throws FileNotFoundException, IOException;
 	public List<LineaAerea > getAllLineaAerea() throws FileNotFoundException, IOException;

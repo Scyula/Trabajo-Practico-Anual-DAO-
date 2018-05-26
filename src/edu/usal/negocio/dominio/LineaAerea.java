@@ -2,18 +2,20 @@ package edu.usal.negocio.dominio;
 
 public class LineaAerea {
 	private String nombre;
-	private String alianza;
+	private int alianza;
 	private Vuelo vuelos;
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getAlianza() {
+	public int getAlianza() {
 		return alianza;
 	}
-	public void setAlianza(String alianza) {
+	public void setAlianza(int alianza) {
 		this.alianza = alianza;
 	}
 	public Vuelo getVuelos() {
@@ -22,5 +24,4 @@ public class LineaAerea {
 	public void setVuelos(Vuelo vuelos) {
 		this.vuelos = vuelos;
 	}
-	
 }

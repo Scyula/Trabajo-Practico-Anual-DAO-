@@ -4,8 +4,8 @@ public class Direccion {
 	private String calle;
 	private String altura;
 	private String ciudad;
-	private String provincia;
-	private String pais;
+	private int provincia;
+	private int pais;
 	private String codPostal;
 	public String getCalle() {
 		return calle;
@@ -25,16 +25,16 @@ public class Direccion {
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
-	public String getProvincia() {
+	public int getProvincia() {
 		return provincia;
 	}
-	public void setProvincia(String provincia) {
+	public void setProvincia(int provincia) {
 		this.provincia = provincia;
 	}
-	public String getPais() {
+	public int getPais() {
 		return pais;
 	}
-	public void setPais(String pais) {
+	public void setPais(int pais) {
 		this.pais = pais;
 	}
 	public String getCodPostal() {

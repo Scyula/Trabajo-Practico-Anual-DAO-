@@ -5,6 +5,7 @@ public class Aeropuerto {
 	private String ciudad;
 	private String provincia;
 	private String pais;
+	
 	public String getIdAeropuerto() {
 		return idAeropuerto;
 	}
@@ -29,5 +30,4 @@ public class Aeropuerto {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
-
 }

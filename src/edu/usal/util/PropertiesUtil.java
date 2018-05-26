@@ -6,98 +6,109 @@ import java.io.*;
 public class PropertiesUtil {
 	private static Properties config;
 	
-	public static String getPathPabellon()throws IOException, FileNotFoundException{
+	public static String getPathCliente()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
 			config.load(new FileReader("config.properties"));
-			return config.getProperty("pathPabellon");
+			return config.getProperty("pathCliente");
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public static String getPathAlumno()throws IOException, FileNotFoundException{
+	public static String getNameClienteStream()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
 			config.load(new FileReader("config.properties"));
-			return config.getProperty("pathAlumno");
+			return config.getProperty("nameFileCliente");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathLineaAerea()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("pathLineaAerea");
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public static String getPathCarrera()throws IOException, FileNotFoundException{
+	public static String getNameLineaAereaStream()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
 			config.load(new FileReader("config.properties"));
-			return config.getProperty("pathCarrera");
+			return config.getProperty("nameFileLineaAerea");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathAlianzas()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("pathAlianzas");
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public static String getNamePabellonStream(){
+	public static String getNameAlianzas()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
 			config.load(new FileReader("config.properties"));
-			return config.getProperty("namePabellonStream");
+			return config.getProperty("nameFileAlianzas");
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 		return null;
 	}
-	public static String getNamePabellonString(){
+	public static String getPathPaises()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
 			config.load(new FileReader("config.properties"));
-			return config.getProperty("namePabellonString");
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return null;
-	}
-	public static String getNameAlumnoString(){
-		try{
-			config = new Properties();
-			config.load(new FileReader("config.properties"));
-			return config.getProperty("nameAlumnoString");
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return null;
-	}
-	public static String getNameAlumnoStream(){
-		try{
-			config = new Properties();
-			config.load(new FileReader("config.properties"));
-			return config.getProperty("nameAlumnoStream");
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return null;
-	}
-	public static String getNameCarreraString(){
-		try{
-			config = new Properties();
-			config.load(new FileReader("config.properties"));
-			return config.getProperty("nameCarreraString");
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return null;
-	}
-	public static String getNameCarreraStream(){
-		try{
-			config = new Properties();
-			config.load(new FileReader("config.properties"));
-			return config.getProperty("nameCarreraStream");
+			return config.getProperty("pathPaises");
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
+	public static String getNamePaises()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("nameFilePaises");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathProvincias()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("pathProvincias");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static String getNameProvincias()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(new FileReader("config.properties"));
+			return config.getProperty("nameFileProvincias");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
