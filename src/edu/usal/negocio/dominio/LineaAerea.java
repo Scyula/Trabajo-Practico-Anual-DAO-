@@ -1,6 +1,7 @@
 package edu.usal.negocio.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class LineaAerea implements Serializable{
 	/**
@@ -9,10 +10,10 @@ public class LineaAerea implements Serializable{
 	private static final long serialVersionUID = 664L;
 	private String nombre;
 	private int alianza;
-	private Vuelo vuelos;
+	private ArrayList<Vuelo> vuelos;
 	
-	LineaAerea(){
-		Vuelo vuelos = new Vuelo();
+	public LineaAerea(){
+		ArrayList<Vuelo> vuelos = new ArrayList<Vuelo>();
 	}
 	
 	public String getNombre() {
@@ -27,10 +28,10 @@ public class LineaAerea implements Serializable{
 	public void setAlianza(int alianza) {
 		this.alianza = alianza;
 	}
-	public Vuelo getVuelos() {
+	public ArrayList<Vuelo> getVuelos() {
 		return vuelos;
 	}
-	public void setVuelos(Vuelo vuelos) {
+	public void setVuelos(ArrayList<Vuelo> vuelos) {
 		this.vuelos = vuelos;
 	}
 }

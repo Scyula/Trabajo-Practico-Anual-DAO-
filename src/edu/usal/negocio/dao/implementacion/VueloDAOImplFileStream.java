@@ -28,7 +28,8 @@ public class VueloDAOImplFileStream implements VueloDAO {
 		List<Vuelo> lista = this.getAllVuelo();
 		for(Vuelo v : lista){
 			if(v.getId_vuelo()==vuelo.getId_vuelo()){
-				v = vuelo;
+				lista.remove(v);
+				lista.add(vuelo);
 				this.saveAllVuelo(lista);
 				return true;
 				}

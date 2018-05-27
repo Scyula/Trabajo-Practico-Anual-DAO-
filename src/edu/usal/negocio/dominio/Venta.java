@@ -17,7 +17,7 @@ public class Venta implements Serializable{
 	private String formaPago;
 	private String totalPagar;
 	
-	Venta(){
+	public Venta(){
 		Cliente cliente = new Cliente();
 		Vuelo vuelo = new Vuelo();
 		Calendar fechaHoraVenta = new GregorianCalendar();

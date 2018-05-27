@@ -15,7 +15,7 @@ public class Pasaporte implements Serializable{
 	private Calendar emision;
 	private Calendar vencimiento;
 	
-	Pasaporte(){
+	public Pasaporte(){
 		Calendar emision= new GregorianCalendar();
 		Calendar vencimiento= new GregorianCalendar();
 	}

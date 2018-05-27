@@ -21,7 +21,7 @@ public class Vuelo implements Serializable{
 	private String tiempoVuelo;
 	private List<Cliente> clientes;
 	
-	Vuelo(){
+	public Vuelo(){
 		Aeropuerto aeropuertoSalida = new Aeropuerto();
 		Aeropuerto aeropuertoLlegada= new Aeropuerto();
 		Calendar fechaHoraSalida = new GregorianCalendar();

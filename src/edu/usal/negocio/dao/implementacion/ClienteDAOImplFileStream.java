@@ -27,8 +27,9 @@ public class ClienteDAOImplFileStream implements ClienteDAO {
 	public boolean updateCliente(Cliente cliente) throws FileNotFoundException, IOException {
 		List<Cliente> lista = this.getAllCliente();
 		for(Cliente c : lista){
-			if(c.getCuitcuil()==cliente.getCuitcuil()){
-				c = cliente;
+			if(c.getCuitcuil().equals(cliente.getCuitcuil())){
+				lista.remove(c);
+				lista.add(cliente);
 				this.saveAllCliente(lista);
 				return true;
 				}
@@ -40,7 +41,7 @@ public class ClienteDAOImplFileStream implements ClienteDAO {
 	public boolean deleteCliente(Cliente cliente) throws FileNotFoundException, IOException {
 		List<Cliente> lista = this.getAllCliente();
 		for(Cliente c : lista){
-			if(c.getCuitcuil()==cliente.getCuitcuil()){
+			if(c.getCuitcuil().equals(cliente.getCuitcuil())){
 				lista.remove(c);
 				this.saveAllCliente(lista);
 				return true;

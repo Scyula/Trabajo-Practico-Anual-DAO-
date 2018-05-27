@@ -35,7 +35,8 @@ public class VentaDAOImplFileStream implements VentaDAO {
 		List<Venta> lista = this.getAllVenta();
 		for(Venta v : lista){
 			if(v.getId_venta()==venta.getId_venta()){
-				v = venta;
+				lista.remove(v);
+				lista.add(venta);
 				this.saveAllVenta(lista);
 				return true;
 				}

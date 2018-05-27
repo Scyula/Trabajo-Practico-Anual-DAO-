@@ -28,7 +28,8 @@ public class LineaAereaDAOImplFileStream implements LineaAereaDAO {
 		List<LineaAerea> lista = this.getAllLineaAerea();
 		for(LineaAerea la : lista){
 			if(la.getNombre().equalsIgnoreCase(lineaAerea.getNombre())){
-				la = lineaAerea;
+				lista.remove(la);
+				lista.add(lineaAerea);
 				this.saveAllLineaAerea(lista);
 				return true;
 				}
