@@ -125,7 +125,7 @@ public class PropertiesUtil {
 	public static String getNameVuelo()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
-			config.load(new FileReader("config.properties"));
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFileVuelo");
 		}catch(IOException e){
 			e.printStackTrace();
@@ -142,12 +142,73 @@ public class PropertiesUtil {
 		}
 		return null;
 	}
-	
 	public static String getNameLineaAerea()throws IOException, FileNotFoundException{
 		try{
 			config = new Properties();
 			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
 			return config.getProperty("nameFileLineaAerea");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathAllAeroLineas()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
+			return config.getProperty("pathAllAeroLineas");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getNameAllAeroLineas()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
+			return config.getProperty("nameFileAllAeroLineas");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getPathAllAeropuertos()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
+			return config.getProperty("pathLineaAerea");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getNameAllAeropuertos()throws IOException, FileNotFoundException{
+		try{
+			config = new Properties();
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
+			return config.getProperty("nameFileLineaAerea");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static String getPathAeropuerto() {
+		try{
+			config = new Properties();
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
+			return config.getProperty("pathAeropuerto");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static String getNamePathAeropuerto() {
+		try{
+			config = new Properties();
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
+			return config.getProperty("nameFileAeropuerto");
 		}catch(IOException e){
 			e.printStackTrace();
 		}

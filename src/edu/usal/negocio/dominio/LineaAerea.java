@@ -10,10 +10,10 @@ public class LineaAerea implements Serializable{
 	private static final long serialVersionUID = 664L;
 	private String nombre;
 	private int alianza;
-	private ArrayList<Vuelo> vuelos;
+	private ArrayList<String> vuelos;
 	
 	public LineaAerea(){
-		ArrayList<Vuelo> vuelos = new ArrayList<Vuelo>();
+		ArrayList<String> vuelos = new ArrayList<String>();
 	}
 	
 	public String getNombre() {
@@ -28,10 +28,10 @@ public class LineaAerea implements Serializable{
 	public void setAlianza(int alianza) {
 		this.alianza = alianza;
 	}
-	public ArrayList<Vuelo> getVuelos() {
+	public ArrayList<String> getVuelos() {
 		return vuelos;
 	}
-	public void setVuelos(ArrayList<Vuelo> vuelos) {
+	public void setVuelos(ArrayList<String> vuelos) {
 		this.vuelos = vuelos;
 	}
 }

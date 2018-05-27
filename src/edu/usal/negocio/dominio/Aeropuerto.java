@@ -9,8 +9,8 @@ public class Aeropuerto implements Serializable {
 	private static final long serialVersionUID = 333L;
 	private String idAeropuerto;
 	private String ciudad;
-	private String provincia;
-	private String pais;
+	private int provincia;
+	private int pais;
 	
 	public String getIdAeropuerto() {
 		return idAeropuerto;
@@ -24,16 +24,16 @@ public class Aeropuerto implements Serializable {
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
-	public String getProvincia() {
+	public int getProvincia() {
 		return provincia;
 	}
-	public void setProvincia(String provincia) {
+	public void setProvincia(int provincia) {
 		this.provincia = provincia;
 	}
-	public String getPais() {
+	public int getPais() {
 		return pais;
 	}
-	public void setPais(String pais) {
+	public void setPais(int pais) {
 		this.pais = pais;
 	}
 }

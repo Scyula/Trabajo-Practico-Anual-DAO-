@@ -2,11 +2,14 @@ package edu.usal.negocio.dao.implementacion;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Scanner;
 
 import edu.usal.negocio.dao.interfaces.LineaAereaDAO;
 import edu.usal.negocio.dominio.Cliente;
 import edu.usal.negocio.dominio.LineaAerea;
+import edu.usal.negocio.dominio.Vuelo;
 import edu.usal.util.PropertiesUtil;
 
 public class LineaAereaDAOImplFileStream implements LineaAereaDAO {
@@ -58,9 +61,9 @@ public class LineaAereaDAOImplFileStream implements LineaAereaDAO {
 			file.mkdirs();
 			file= new File(PropertiesUtil.getPathLineaAerea(), PropertiesUtil.getNameLineaAerea());
 			file.createNewFile();
-			this.saveAllLineaAerea(new ArrayList<LineaAerea>());
-			return new ArrayList<LineaAerea>();
+			this.saveAllLineaAerea(this.primeraLectura());
 		}
+		this.file= new File(PropertiesUtil.getPathLineaAerea(), PropertiesUtil.getNameLineaAerea());
 		this.fileIn = new FileInputStream(this.file);
 		this.objInput = new ObjectInputStream(this.fileIn);
 		try {
@@ -81,7 +84,26 @@ public class LineaAereaDAOImplFileStream implements LineaAereaDAO {
 		this.objOutput = new ObjectOutputStream(fileOut);
 		this.objOutput.writeObject(lineaAerea);
 		this.objOutput.close();
-
 	}
-
+	
+	private ArrayList<LineaAerea> primeraLectura(){
+		ArrayList<LineaAerea> lista = new ArrayList<LineaAerea>();
+		try {
+			
+			this.file= new File(PropertiesUtil.getPathAllAeroLineas(),PropertiesUtil.getNameAllAeroLineas());
+			Scanner scanner= new Scanner(file);
+			while (scanner.hasNextLine()){
+				String[] straux = scanner.nextLine().split("-");
+				LineaAerea nueva = new LineaAerea();
+				nueva.setAlianza(Integer.parseInt(straux[0]));
+				nueva.setNombre(straux[1]);
+				nueva.setVuelos(new ArrayList<String>());
+				lista.add(nueva);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return lista;
+	}
 }

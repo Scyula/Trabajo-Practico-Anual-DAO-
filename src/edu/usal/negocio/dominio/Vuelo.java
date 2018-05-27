@@ -14,6 +14,7 @@ public class Vuelo implements Serializable{
 	private int id_vuelo;
 	private String nombreAerolinea;
 	private Integer cantAsientos;
+	private Integer asientosDisponibles;
 	private Aeropuerto aeropuertoSalida;
 	private Aeropuerto aeropuertoLlegada;
 	private Calendar fechaHoraSalida;
@@ -83,5 +84,10 @@ public class Vuelo implements Serializable{
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
 	}
-	
+	public Integer getAsientosDisponibles() {
+		return asientosDisponibles;
+	}
+	public void setAsientosDisponibles(Integer asientosDisponibles) {
+		this.asientosDisponibles = asientosDisponibles;
+	}
 }
