@@ -176,7 +176,7 @@ public class PropertiesUtil {
 		try{
 			config = new Properties();
 			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
-			return config.getProperty("pathLineaAerea");
+			return config.getProperty("pathAllAeropuertos");
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -186,7 +186,7 @@ public class PropertiesUtil {
 		try{
 			config = new Properties();
 			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
-			return config.getProperty("nameFileLineaAerea");
+			return config.getProperty("nameFileAllAeropuertos");
 		}catch(IOException e){
 			e.printStackTrace();
 		}

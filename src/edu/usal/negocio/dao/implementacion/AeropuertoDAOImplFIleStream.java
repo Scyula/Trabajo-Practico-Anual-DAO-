@@ -1,5 +1,6 @@
 package edu.usal.negocio.dao.implementacion;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -66,8 +67,8 @@ public class AeropuertoDAOImplFIleStream implements AeropuertoDAO {
 			file= new File(PropertiesUtil.getPathAeropuerto(), PropertiesUtil.getNamePathAeropuerto());
 			file.createNewFile();
 			this.saveAllAeropuerto(this.primeraLectura());
+			this.file= new File(PropertiesUtil.getPathAeropuerto(), PropertiesUtil.getNamePathAeropuerto());
 		}
-		this.file= new File(PropertiesUtil.getPathAeropuerto(), PropertiesUtil.getNamePathAeropuerto());
 		this.fileIn = new FileInputStream(this.file);
 		this.objInput = new ObjectInputStream(this.fileIn);
 		try {
@@ -109,7 +110,9 @@ public class AeropuertoDAOImplFIleStream implements AeropuertoDAO {
 				}
 				lista.add(nueva);
 			}
-		} catch (IOException e) {
+		}catch(EOFException e){
+			
+		}catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
