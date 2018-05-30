@@ -15,8 +15,8 @@ public class Vuelo implements Serializable{
 	private String nombreAerolinea;
 	private Integer cantAsientos;
 	private Integer asientosDisponibles;
-	private Aeropuerto aeropuertoSalida;
-	private Aeropuerto aeropuertoLlegada;
+	private String aeropuertoSalida;
+	private String aeropuertoLlegada;
 	private Calendar fechaHoraSalida;
 	private Calendar fechaHoraLlegada;
 	private String tiempoVuelo;
@@ -48,16 +48,16 @@ public class Vuelo implements Serializable{
 	public void setCantAsientos(Integer cantAsientos) {
 		this.cantAsientos = cantAsientos;
 	}
-	public Aeropuerto getAeropuertoSalida() {
+	public String getAeropuertoSalida() {
 		return aeropuertoSalida;
 	}
-	public void setAeropuertoSalida(Aeropuerto aeropuertoSalida) {
+	public void setAeropuertoSalida(String aeropuertoSalida) {
 		this.aeropuertoSalida = aeropuertoSalida;
 	}
-	public Aeropuerto getAeropuertoLlegada() {
+	public String getAeropuertoLlegada() {
 		return aeropuertoLlegada;
 	}
-	public void setAeropuertoLlegada(Aeropuerto aeropuertoLlegada) {
+	public void setAeropuertoLlegada(String aeropuertoLlegada) {
 		this.aeropuertoLlegada = aeropuertoLlegada;
 	}
 	public Calendar getFechaHoraSalida() {

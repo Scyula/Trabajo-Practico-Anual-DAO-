@@ -15,7 +15,7 @@ public class ProvinciasDAOImplFileString implements ProvinciasDAO {
 	
 	@Override
 	public Hashtable<Integer, String> leerProvincias() throws FileNotFoundException, IOException {
-		file = new File(PropertiesUtil.getPathProvincias(), PropertiesUtil.getNameProvincias());
+		file = new File(PropertiesUtil.getNameProvincias());
 		scanner= new Scanner(file);
 		Hashtable<Integer, String> list = new Hashtable<Integer, String>();
 		while (scanner.hasNextLine()){

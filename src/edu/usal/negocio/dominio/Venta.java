@@ -10,8 +10,8 @@ public class Venta implements Serializable{
 	 */
 	private static final long serialVersionUID = 837L;
 	private int id_venta;
-	private Cliente cliente;
-	private Vuelo vuelo;
+	private String cliente;
+	private int id_vuelo;
 	private String lineaAerea;
 	private Calendar fechaHoraVenta;
 	private String formaPago;
@@ -29,17 +29,17 @@ public class Venta implements Serializable{
 	public void setId_venta(int id_venta) {
 		this.id_venta = id_venta;
 	}
-	public Cliente getCliente() {
+	public String getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
-	public Vuelo getVuelo() {
-		return vuelo;
+	public int getVuelo() {
+		return id_vuelo;
 	}
-	public void setVuelo(Vuelo vuelo) {
-		this.vuelo = vuelo;
+	public void setVuelo(int id_vuelo) {
+		this.id_vuelo = id_vuelo;
 	}
 	public String getLineaAerea() {
 		return lineaAerea;

@@ -15,7 +15,7 @@ public class AlianzaDAOImplFileString implements AlianzasDAO {
 	
 	@Override
 	public Hashtable<Integer, String> leerAlianzas() throws FileNotFoundException, IOException {
-			file = new File(PropertiesUtil.getPathAlianzas(), PropertiesUtil.getNameAlianzas());
+			file = new File(PropertiesUtil.getNameAlianzas());
 			scanner= new Scanner(file);
 			Hashtable<Integer, String> list = new Hashtable<Integer, String>();
 			while (scanner.hasNextLine()){

@@ -95,7 +95,7 @@ public class AeropuertoDAOImplFIleStream implements AeropuertoDAO {
 		ArrayList<Aeropuerto> lista = new ArrayList<Aeropuerto>();
 		try {
 			
-			this.file= new File(PropertiesUtil.getPathAllAeropuertos(),PropertiesUtil.getNameAllAeropuertos());
+			this.file= new File(PropertiesUtil.getNameAllAeropuertos());
 			Scanner scanner= new Scanner(file);
 			while (scanner.hasNextLine()){
 				String[] straux = scanner.nextLine().split("-");

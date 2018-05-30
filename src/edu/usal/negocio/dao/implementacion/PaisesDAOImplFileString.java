@@ -15,7 +15,7 @@ public class PaisesDAOImplFileString implements PaisesDAO {
 	
 	@Override
 	public Hashtable<Integer, String> leerPaises() throws FileNotFoundException, IOException {
-		file = new File(PropertiesUtil.getPathPaises(), PropertiesUtil.getNamePaises());
+		file = new File(PropertiesUtil.getNamePaises());
 		scanner= new Scanner(file);
 		Hashtable<Integer, String> list = new Hashtable<Integer, String>();
 		while (scanner.hasNextLine()){
