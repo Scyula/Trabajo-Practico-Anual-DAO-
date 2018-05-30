@@ -20,14 +20,12 @@ public class Vuelo implements Serializable{
 	private Calendar fechaHoraSalida;
 	private Calendar fechaHoraLlegada;
 	private String tiempoVuelo;
-	private List<Cliente> clientes;
+	private List<String> clientes;
 	
 	public Vuelo(){
-		Aeropuerto aeropuertoSalida = new Aeropuerto();
-		Aeropuerto aeropuertoLlegada= new Aeropuerto();
 		Calendar fechaHoraSalida = new GregorianCalendar();
 		Calendar fechaHoraLlegada= new GregorianCalendar();
-		List<Cliente> clientes = new ArrayList<Cliente>();
+		List<String> clientes = new ArrayList<String>();
 	}
 	
 	public int getId_vuelo() {
@@ -78,10 +76,10 @@ public class Vuelo implements Serializable{
 	public void setTiempoVuelo(String tiempoVuelo) {
 		this.tiempoVuelo = tiempoVuelo;
 	}
-	public List<Cliente> getClientes() {
+	public List<String> getClientes() {
 		return clientes;
 	}
-	public void setClientes(List<Cliente> clientes) {
+	public void setClientes(List<String> clientes) {
 		this.clientes = clientes;
 	}
 	public Integer getAsientosDisponibles() {
