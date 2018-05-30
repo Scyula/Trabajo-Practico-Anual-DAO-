@@ -16,6 +16,7 @@ public class Venta implements Serializable{
 	private Calendar fechaHoraVenta;
 	private String formaPago;
 	private String totalPagar;
+	private int cant_vuelos;
 	
 	public Venta(){
 		Cliente cliente = new Cliente();
@@ -64,6 +65,14 @@ public class Venta implements Serializable{
 	}
 	public void setTotalPagar(String totalPagar) {
 		this.totalPagar = totalPagar;
+	}
+
+	public int getCant_vuelos() {
+		return cant_vuelos;
+	}
+
+	public void setCant_vuelos(int cant_vuelos) {
+		this.cant_vuelos = cant_vuelos;
 	}
 	
 }

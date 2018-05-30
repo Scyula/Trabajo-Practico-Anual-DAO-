@@ -90,7 +90,7 @@ public class LineaAereaDAOImplFileStream implements LineaAereaDAO {
 		ArrayList<LineaAerea> lista = new ArrayList<LineaAerea>();
 		try {
 			
-			this.file= new File(PropertiesUtil.getNameAllAeroLineas());
+			this.file= new File(PropertiesUtil.getPathTxt(), PropertiesUtil.getNameAllAeroLineas());
 			Scanner scanner= new Scanner(file);
 			while (scanner.hasNextLine()){
 				String[] straux = scanner.nextLine().split("-");

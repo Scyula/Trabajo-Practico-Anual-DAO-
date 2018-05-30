@@ -21,7 +21,7 @@ public class Cliente implements Serializable{
 	private Telefono telefono;
 	private PasajeroFrecuente pasajeroFrecuente;
 	private Direccion direccion;
-	private List<Vuelo> vuelos;
+	private List<Integer> vuelos;
 	
 	@SuppressWarnings("unused")
 	public Cliente(){
@@ -30,7 +30,7 @@ public class Cliente implements Serializable{
 		Telefono telefono = new Telefono();
 		PasajeroFrecuente pasajeroFrecuente = new PasajeroFrecuente();
 		Direccion direccion = new Direccion();
-		List<Vuelo> vuelos = new ArrayList<Vuelo>();
+		List<Integer> vuelos = new ArrayList<Integer>();
 	}
 	public String getNombre() {
 		return nombre;
@@ -86,10 +86,10 @@ public class Cliente implements Serializable{
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
-	public List<Vuelo> getVuelos() {
+	public List<Integer> getVuelos() {
 		return vuelos;
 	}
-	public void setVuelos(List<Vuelo> vuelos) {
+	public void setVuelos(List<Integer> vuelos) {
 		this.vuelos = vuelos;
 	}
 	

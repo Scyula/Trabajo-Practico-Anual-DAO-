@@ -90,12 +90,15 @@ public class AeropuertoDAOImplFIleStream implements AeropuertoDAO {
 		this.objOutput.writeObject(lineaAerea);
 		this.objOutput.close();
 	}
-	
+	public boolean reestablecer() throws FileNotFoundException, IOException{
+		this.saveAllAeropuerto(this.primeraLectura());
+		return true;
+	}
 	private ArrayList<Aeropuerto> primeraLectura(){
 		ArrayList<Aeropuerto> lista = new ArrayList<Aeropuerto>();
 		try {
 			
-			this.file= new File(PropertiesUtil.getNameAllAeropuertos());
+			this.file= new File(PropertiesUtil.getPathTxt(), PropertiesUtil.getNameAllAeropuertos());
 			Scanner scanner= new Scanner(file);
 			while (scanner.hasNextLine()){
 				String[] straux = scanner.nextLine().split("-");

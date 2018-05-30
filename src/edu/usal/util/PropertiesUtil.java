@@ -160,4 +160,15 @@ public class PropertiesUtil {
 		}
 		return null;
 	}
+
+	public static String getPathTxt() {
+		try{
+			config = new Properties();
+			config.load(ClassLoader.getSystemResourceAsStream("config.properties"));
+			return config.getProperty("pathTxt");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
