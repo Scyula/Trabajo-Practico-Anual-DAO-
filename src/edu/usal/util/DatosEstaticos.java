@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 import edu.usal.negocio.dao.implementacion.SQL.LineaAereaDAOImplSQL;
+import edu.usal.negocio.dao.implementacion.String.AlianzaDAOImplFileString;
 import edu.usal.negocio.dao.implementacion.String.PaisesDAOImplFileString;
 import edu.usal.negocio.dao.implementacion.String.ProvinciasDAOImplFileString;
+import edu.usal.negocio.dao.interfaces.AlianzasDAO;
 import edu.usal.negocio.dao.interfaces.LineaAereaDAO;
 import edu.usal.negocio.dao.interfaces.PaisesDAO;
 import edu.usal.negocio.dao.interfaces.ProvinciasDAO;
@@ -27,11 +29,14 @@ public class DatosEstaticos {
 	}
 
 	private static Hashtable<Integer, String> cargarAlianzas() {
-		Hashtable<Integer,String> lista = new Hashtable<Integer,String>(); 
-		lista.put(1, "Skyteam");
-		lista.put(2, "Openworld");
-		lista.put(3, "Star Alliance");
-		return lista;
+		try {
+			AlianzasDAO ali =  new AlianzaDAOImplFileString();
+			return ali.leerAlianzas();
+		} catch (IOException e) {
+			IOGeneralDAO.pritln(">>>>>Ocurrio un error al leer las provincias<<<<<");
+			IOGeneralDAO.pritln(e.getMessage());
+		}	
+		return new Hashtable<Integer, String>();
 	}
 	
 	public static Hashtable<Integer, String> getPaises() {
@@ -62,7 +67,7 @@ public class DatosEstaticos {
 			IOGeneralDAO.pritln(">>>>>Ocurrio un error al leer las aerolineas de la base de datos<<<<<");
 			IOGeneralDAO.pritln(e.getMessage());
 		}
-		return null;
+		return new ArrayList<LineaAerea>();
 	}
 
 	private static Hashtable<Integer, String> cargarPaises() {
@@ -74,7 +79,7 @@ public class DatosEstaticos {
 			IOGeneralDAO.pritln(">>>>>Ocurrio un error al leer los paises<<<<<");
 			IOGeneralDAO.pritln(e.getMessage());
 		}		
-		return null;
+		return new Hashtable<Integer, String>();
 	}
 
 	private static Hashtable<Integer, String> cargarProvincias() {
@@ -85,7 +90,7 @@ public class DatosEstaticos {
 			IOGeneralDAO.pritln(">>>>>Ocurrio un error al leer las provincias<<<<<");
 			IOGeneralDAO.pritln(e.getMessage());
 		}	
-		return null;
+		return new Hashtable<Integer, String>();
 	}
 
 	public static void actualizarAerolineas() {
