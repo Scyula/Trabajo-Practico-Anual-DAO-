@@ -3,6 +3,7 @@ package edu.usal.negocio.dominio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -14,15 +15,29 @@ public class Cliente implements Serializable{
 	private static final long serialVersionUID = 516L;
 	private String nombre;
 	private String apellido;
+	private Integer DNI;
 	private Pasaporte pasaporte;
 	private String cuitcuil;
-	private Calendar fechaNac;
+	private Date fechaNac;
 	private String email;
 	private Telefono telefono;
 	private PasajeroFrecuente pasajeroFrecuente;
 	private Direccion direccion;
-	private List<Integer> vuelos;
 	
+	public Cliente(String nombre, String apellido,int dni, Pasaporte pasaporte, String cuitcuil, Date fechaNac,
+			String email, Telefono telefono, PasajeroFrecuente pasajeroFrecuente, Direccion direccion) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.DNI=dni;
+		this.pasaporte = pasaporte;
+		this.cuitcuil = cuitcuil;
+		this.fechaNac = fechaNac;
+		this.email = email;
+		this.telefono = telefono;
+		this.pasajeroFrecuente = pasajeroFrecuente;
+		this.direccion = direccion;
+	}
 	@SuppressWarnings("unused")
 	public Cliente(){
 		Pasaporte pasaporte= new Pasaporte();
@@ -56,10 +71,10 @@ public class Cliente implements Serializable{
 	public void setCuitcuil(String cuitcuil) {
 		this.cuitcuil = cuitcuil;
 	}
-	public Calendar getFechaNac() {
+	public Date getFechaNac() {
 		return fechaNac;
 	}
-	public void setFechaNac(Calendar fechaNac) {
+	public void setFechaNac(Date fechaNac) {
 		this.fechaNac = fechaNac;
 	}
 	public String getEmail() {
@@ -86,11 +101,16 @@ public class Cliente implements Serializable{
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
-	public List<Integer> getVuelos() {
-		return vuelos;
+	public Integer getDNI() {
+		return DNI;
 	}
-	public void setVuelos(List<Integer> vuelos) {
-		this.vuelos = vuelos;
+	public void setDNI(Integer dNI) {
+		DNI = dNI;
 	}
+	@Override
+	public String toString() {
+		return nombre + ", " + apellido + " -DNI=" + DNI + " -CUIT/CUIL=" + cuitcuil
+				+ " -Fecha de Nacimiento=" + fechaNac + " -E-mail=" + email;
+	}	
 	
 }

@@ -1,4 +1,4 @@
-package edu.usal.negocio.dao.implementacion;
+package edu.usal.negocio.dao.implementacion.String;
 
 import java.io.File;
 import java.io.FileNotFoundException;

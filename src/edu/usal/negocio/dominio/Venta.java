@@ -1,78 +1,105 @@
 package edu.usal.negocio.dominio;
 
-import java.io.Serializable;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Date;
 
-public class Venta implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 837L;
+public class Venta {
+	
 	private int id_venta;
-	private String cliente;
-	private int id_vuelo;
-	private String lineaAerea;
-	private Calendar fechaHoraVenta;
+	private Cliente cliente;
+	private Vuelo vuelo;
+	private LineaAerea lineaAerea;
+	private Date fechaHoraVenta;
 	private String formaPago;
-	private String totalPagar;
-	private int cant_vuelos;
+	private int cuotas;
+	private Double totalPagar;
 	
 	public Venta(){
-		Cliente cliente = new Cliente();
-		Vuelo vuelo = new Vuelo();
-		Calendar fechaHoraVenta = new GregorianCalendar();
+
 	}
-	
-	public int getId_venta() {
-		return id_venta;
-	}
-	public void setId_venta(int id_venta) {
+
+	public Venta(int id_venta, Cliente cliente, Vuelo vuelo, LineaAerea lineaAerea, Date fechaHoraVenta,
+			String formaPago, int cuotas, Double totalPagar) {
+		super();
 		this.id_venta = id_venta;
-	}
-	public String getCliente() {
-		return cliente;
-	}
-	public void setCliente(String cliente) {
 		this.cliente = cliente;
-	}
-	public int getVuelo() {
-		return id_vuelo;
-	}
-	public void setVuelo(int id_vuelo) {
-		this.id_vuelo = id_vuelo;
-	}
-	public String getLineaAerea() {
-		return lineaAerea;
-	}
-	public void setLineaAerea(String lineaAerea) {
+		this.vuelo = vuelo;
 		this.lineaAerea = lineaAerea;
-	}
-	public Calendar getFechaHoraVenta() {
-		return fechaHoraVenta;
-	}
-	public void setFechaHoraVenta(Calendar fechaHoraVenta) {
 		this.fechaHoraVenta = fechaHoraVenta;
-	}
-	public String getFormaPago() {
-		return formaPago;
-	}
-	public void setFormaPago(String formaPago) {
 		this.formaPago = formaPago;
-	}
-	public String getTotalPagar() {
-		return totalPagar;
-	}
-	public void setTotalPagar(String totalPagar) {
+		this.cuotas = cuotas;
 		this.totalPagar = totalPagar;
 	}
 
-	public int getCant_vuelos() {
-		return cant_vuelos;
+	public int getId_venta() {
+		return id_venta;
 	}
 
-	public void setCant_vuelos(int cant_vuelos) {
-		this.cant_vuelos = cant_vuelos;
+	public void setId_venta(int id_venta) {
+		this.id_venta = id_venta;
 	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Vuelo getVuelo() {
+		return vuelo;
+	}
+
+	public void setVuelo(Vuelo vuelo) {
+		this.vuelo = vuelo;
+	}
+
+	public LineaAerea getLineaAerea() {
+		return lineaAerea;
+	}
+
+	public void setLineaAerea(LineaAerea lineaAerea) {
+		this.lineaAerea = lineaAerea;
+	}
+
+	public Date getFechaHoraVenta() {
+		return fechaHoraVenta;
+	}
+
+	public void setFechaHoraVenta(Date fechaHoraVenta) {
+		this.fechaHoraVenta = fechaHoraVenta;
+	}
+
+	public String getFormaPago() {
+		return formaPago;
+	}
+
+	public void setFormaPago(String formaPago) {
+		this.formaPago = formaPago;
+	}
+
+	public Double getTotalPagar() {
+		return totalPagar;
+	}
+
+	public void setTotalPagar(Double totalPagar) {
+		this.totalPagar = totalPagar;
+	}
+
+	public int getCuotas() {
+		return cuotas;
+	}
+
+	public void setCuotas(int cuotas) {
+		this.cuotas = cuotas;
+	}
+
+	@Override
+	public String toString() {
+		return "Venta [id_venta=" + id_venta + ", cliente=" + cliente.getDNI() + ", vuelo=" + vuelo.getId_vuelo() + ", lineaAerea="
+				+ lineaAerea.getNombre() + ", fechaHoraVenta=" + fechaHoraVenta + ", formaPago=" + formaPago + ", cuotas=" + cuotas
+				+ ", totalPagar=" + totalPagar + "]";
+	}
+	
 	
 }

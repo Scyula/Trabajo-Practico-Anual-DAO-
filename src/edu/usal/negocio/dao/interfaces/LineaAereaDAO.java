@@ -1,17 +1,17 @@
 package edu.usal.negocio.dao.interfaces;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.usal.negocio.dominio.LineaAerea ;
 
 public interface LineaAereaDAO {
 
-	public boolean addLineaAerea(LineaAerea lineaAerea) throws FileNotFoundException, IOException;
-	public boolean updateLineaAerea(LineaAerea lineaAerea) throws FileNotFoundException, IOException;
-	public boolean deleteLineaAerea(LineaAerea  lineaAerea) throws FileNotFoundException, IOException;
-	public List<LineaAerea > getAllLineaAerea() throws FileNotFoundException, IOException;
-	public void saveAllLineaAerea(List<LineaAerea > lineaAerea) throws FileNotFoundException, IOException;
+	public boolean addLineaAerea(LineaAerea lineaAerea) throws SQLException;
+	public boolean updateLineaAerea(LineaAerea lineaAerea) throws SQLException;
+	public boolean deleteLineaAerea(LineaAerea  lineaAerea) throws SQLException;
+	public ArrayList<LineaAerea > getAllLineaAerea() throws SQLException;
+	public LineaAerea readLineaAerea(int id) throws SQLException;
 	
 }
