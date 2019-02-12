@@ -21,6 +21,7 @@ import edu.usal.negocio.dominio.LineaAerea;
 import edu.usal.negocio.dominio.Venta;
 import edu.usal.negocio.dominio.Vuelo;
 import edu.usal.util.Coneccion;
+import edu.usal.util.IOGeneralDAO;
 
 public class VentaDAOImplSQL implements VentaDAO {
 	Coneccion con;
@@ -120,9 +121,10 @@ public class VentaDAOImplSQL implements VentaDAO {
 			con.cerrarConeccion();
 			return lista;
 		}
+		IOGeneralDAO.pritln("6");
 		prep.close();
 		con.cerrarConeccion();
-		return null;
+		return lista;
 	}
 
 	
@@ -162,22 +164,21 @@ public class VentaDAOImplSQL implements VentaDAO {
 
 	public Venta readVenta(int id) throws SQLException {
 		con = new Coneccion();
+		Venta leer = null;
 		if(con.iniciarConeccion()) {
 			query = "SELECT * FROM Ventas WHERE ID_Venta=?";
 			prep = con.getConeccion().prepareStatement(query);
 			prep.setInt(1, id);
 			ResultSet rs = prep.executeQuery();
-			rs.next();
-			Venta leer = new Venta(rs.getInt(1), leerCliente(rs.getInt(2)), leerVuelo(rs.getString(4)), leerAerolinea(rs.getInt(3)), 
-					timestampToDate(rs.getTimestamp(5)), rs.getString(6), rs.getInt(7), rs.getDouble(8));
-			
+			if(rs.next()) {
+				leer = new Venta(rs.getInt(1), leerCliente(rs.getInt(2)), leerVuelo(rs.getString(4)), leerAerolinea(rs.getInt(3)), 
+						timestampToDate(rs.getTimestamp(5)), rs.getString(6), rs.getInt(7), rs.getDouble(8));				
+			}
+			rs.close();
 			prep.close();
 			con.cerrarConeccion();
-			return leer;
 		}
-		prep.close();
-		con.cerrarConeccion();
-		return null;
+		return leer;
 	}
 
 }

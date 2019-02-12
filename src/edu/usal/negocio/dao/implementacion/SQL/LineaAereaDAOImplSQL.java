@@ -30,8 +30,6 @@ public class LineaAereaDAOImplSQL implements LineaAereaDAO {
 			prep.setString(3, AsignarREF(lineaAerea.getNombre(), con));
 			int r = prep.executeUpdate();
 			if(r==1) {
-				
-				
 				prep.close();
 				con.cerrarConeccion();
 				return true;
@@ -125,19 +123,20 @@ public class LineaAereaDAOImplSQL implements LineaAereaDAO {
 	
 	public LineaAerea readLineaAerea(int id) throws SQLException {
 		con = new Coneccion();
+		LineaAerea leer = null;
 		if(con.iniciarConeccion()) {
 			query = "SELECT * FROM Aerolinea WHERE ID_Aerolinea= ?";
 			prep = con.getConeccion().prepareStatement(query);
 			prep.setInt(1, id);
 			ResultSet rs = prep.executeQuery();
-			rs.next();
-			LineaAerea leer=  new LineaAerea(rs.getInt(1),rs.getString(3), rs.getInt(2), leerVuelos(rs.getInt(1)));
+			if(rs.next()) {
+				leer=  new LineaAerea(rs.getInt(1),rs.getString(3), rs.getInt(2), leerVuelos(rs.getInt(1)));			
+			}
 			rs.close();
 			prep.close();
 			con.cerrarConeccion();
-			return leer;
 		}
-		return null;		
+		return leer;
 	}
 
 	private String AsignarREF( String nom, Coneccion con ) throws SQLException {

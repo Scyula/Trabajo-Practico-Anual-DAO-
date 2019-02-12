@@ -41,14 +41,14 @@ public class AeropuertoDAOImplSQL implements AeropuertoDAO {
 
 
 	public Aeropuerto readAeropuerto(String id) throws SQLException {
-		Aeropuerto leer = new Aeropuerto();
+		Aeropuerto leer = null;
 		con = new Coneccion();
 		if(con.iniciarConeccion()) {
 			query = "SELECT * FROM Aeropuerto WHERE ID_Aeropuerto=?";
 			prep = con.getConeccion().prepareStatement(query);
 			prep.setString(1, id);
 			ResultSet rs = prep.executeQuery();
-			rs.next();
+			if(rs.next());
 			leer =  new Aeropuerto(rs.getString(1), rs.getString(2),
 					new Provincia(rs.getInt(4), DatosEstaticos.getProvincias().get(rs.getInt(4))),
 					new Pais(rs.getInt(3),DatosEstaticos.getPaises().get(rs.getInt(3))));
@@ -57,9 +57,7 @@ public class AeropuertoDAOImplSQL implements AeropuertoDAO {
 			con.cerrarConeccion();
 			return leer;
 		}
-		prep.close();
-		con.cerrarConeccion();
-		return null;
+		return leer;
 	}
 
 }

@@ -124,20 +124,19 @@ public class ClienteDAOImplSQL implements ClienteDAO {
 	@Override
 	public Cliente readCliente(int dni) throws SQLException {
 		con = new Coneccion();
+		Cliente nuevo = null;
 		if(con.iniciarConeccion()) {
 			query = "SELECT * FROM Cliente WHERE DNI=?";
 			prep = con.getConeccion().prepareStatement(query);
 			prep.setInt(1, dni);
 			ResultSet rs = prep.executeQuery();
-			rs.next();
-			Cliente nuevo = new Cliente(rs.getString(2),rs.getString(3), rs.getInt(1), leerPasaporte(rs.getInt(1)), rs.getString(4), this.convertFromSQLDateToJAVADate(rs.getDate(5)), rs.getString(6), leerTelefono(rs.getInt(1)), leerPasajero(rs.getInt(1)), leerDireccion(rs.getInt(1)));
+			if(rs.next()) {
+				nuevo = new Cliente(rs.getString(2),rs.getString(3), rs.getInt(1), leerPasaporte(rs.getInt(1)), rs.getString(4), this.convertFromSQLDateToJAVADate(rs.getDate(5)), rs.getString(6), leerTelefono(rs.getInt(1)), leerPasajero(rs.getInt(1)), leerDireccion(rs.getInt(1)));				
+			}
 			prep.close();
 			con.cerrarConeccion();
-			return nuevo;
 		}
-		prep.close();
-		con.cerrarConeccion();
-		return null;
+		return nuevo;
 	}
 	
 	private boolean guardarDireccion(Cliente cliente, Coneccion con) throws SQLException{

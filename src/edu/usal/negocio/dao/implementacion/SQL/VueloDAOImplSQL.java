@@ -149,21 +149,21 @@ public class VueloDAOImplSQL implements VueloDAO {
 
 	public Vuelo readVuelo(String id) throws SQLException {
 		con = new Coneccion();
+		Vuelo leer = null;
 		if(con.iniciarConeccion()) {
 			query = "SELECT * FROM Vuelo WHERE ID_Vuelo=?";
 			prep = con.getConeccion().prepareStatement(query);
 			prep.setString(1, id);
 			ResultSet rs = prep.executeQuery();
-			rs.next();
-			Vuelo leer = new Vuelo(rs.getString(1), leerAerolinea(rs.getInt(2)), rs.getInt(3), rs.getInt(4), leerAeropuerto(rs.getString(5)), leerAeropuerto(rs.getString(6)),
-						timestampToDate(rs.getTimestamp(7)), timestampToDate(rs.getTimestamp(8)), rs.getString(9), leerClientes(rs.getString(1)));
+			if(rs.next()) {
+				leer = new Vuelo(rs.getString(1), leerAerolinea(rs.getInt(2)), rs.getInt(3), rs.getInt(4), leerAeropuerto(rs.getString(5)), leerAeropuerto(rs.getString(6)),
+						timestampToDate(rs.getTimestamp(7)), timestampToDate(rs.getTimestamp(8)), rs.getString(9), leerClientes(rs.getString(1)));				
+			}
+			rs.close();
 			prep.close();
 			con.cerrarConeccion();
-			return leer;
 		}
-		prep.close();
-		con.cerrarConeccion();
-		return null;
+		return leer;
 	}	
 	
 	private LineaAerea leerAerolinea(int id)throws SQLException { 
